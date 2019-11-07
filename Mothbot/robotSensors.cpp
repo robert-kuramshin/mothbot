@@ -1,4 +1,6 @@
-#include "robot.h"
+#include "mothbot.h"
+
+extern Servo irServo;
 
 int search() 
 {
@@ -25,6 +27,11 @@ int search()
 
   }
   irServo.write(best_pos);
-  delay(10000);
-  return best_pos;
+  Serial.println(best_val);
+
+  if(best_val < 15)
+  {
+    return 9999;
+  }
+  return best_pos-SEARCH_CENTER;
 }

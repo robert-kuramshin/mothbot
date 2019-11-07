@@ -1,3 +1,6 @@
+#ifndef MOTHBOT_H_
+#define MOTHBOT_H_
+
 #include <Servo.h>
 #include <Arduino.h>
 
@@ -14,10 +17,11 @@
 #define BTN_PIN_1 11
 #define BTN_PIN_2 2
 
-Servo irServo;
 const int analogInPin = A0;
 
 /**-----------------------------------------**/
+
+void setupMotors();
 
 void driveForward(int rate);
 
@@ -38,3 +42,5 @@ void turnRightTime(int t);
 int search();
 
 /**-----------------------------------------**/
+
+#endif

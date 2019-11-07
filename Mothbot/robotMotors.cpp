@@ -1,4 +1,4 @@
-#include "robot.h"
+#include "mothbot.h"
 
 void driveForward(int rate)
 {
@@ -42,7 +42,6 @@ void driveRight(int rate)
 
 void driveBrake()
 {
-    driveBrake();
     digitalWrite(MOTOR_1A,LOW);
     digitalWrite(MOTOR_2B,LOW);
 
@@ -64,4 +63,12 @@ void turnRightTime(int t)
     driveRight(1);
     delay(t);
     driveBrake();
+}
+
+void setupMotors()
+{
+    pinMode(MOTOR_1A, OUTPUT);
+    pinMode(MOTOR_1B, OUTPUT);
+    pinMode(MOTOR_2A, OUTPUT);
+    pinMode(MOTOR_2B, OUTPUT);
 }
